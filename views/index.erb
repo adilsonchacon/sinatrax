@@ -1,11 +1,64 @@
+<h2>What's Sinatrax for?</h2>
+<p>Use Sinatrax to create Sinatra projects with ActiveRecord, Migration, JQuery, Bootstrap and FontAwesome in a fast way.</p>
 
-<div class="starter-template">
-  <h1>What's Sinatrax for?</h1>
-  <p class="lead">Use Sinatrax to create Sinatra projects with ActiveRecord, Migration, Bootstrap and FontAwesome in a fast way.</p>
-</div>
+<h2>How to use it?</h2>
+<pre>
+    git clone https://github.com/adilsonchacon/sinatrax.git
+    cd sinatrax/
+</pre>
 
-<div class="starter-template">
-  <h2>What's Sinatrax for?</h2>
-  <p class="lead">Use Sinatrax to create Sinatra projects with ActiveRecord, Migration, Bootstrap and FontAwesome in a fast way.</p>
-</div>
+<p>Configure your database adapter just uncommeting the right <i>gem</i> on <i>Gemfile</i>: mysql, postgres or sqlite3.</p>
 
+<p>After that, set up database connection with the right adapter and credentials:</p>
+
+<pre>
+    cp config/database.yml.example config/database.yml
+</pre>
+
+<p>Almost there! Just run:</p>
+
+<pre>
+    bundle install
+    rackup config.ru
+</pre>
+
+<p>Done! You're ready to go!</p>
+
+<h2>How it works?</h2>
+<p>Sinatrax has support for ActiveRecord and Migration.</p>
+
+<p>You can generate yours models, just like that:</p>
+
+<pre>
+    ruby schema.rb --db generate author name:string age:integer
+    ruby schema.rb --db generate post title:string body:text author:belongs_to
+</pre>
+
+<p><i>(Please, check the "migration" and "model" directories.)</i></p>
+
+<p>Execute your migrations:</p>
+
+<pre>
+    ruby schema.rb --db migrate
+</pre>
+
+<p>Or rollback:</p>
+
+<pre>
+    ruby schema.rb --db rollback
+</pre>
+
+
+<h2>And More</h2>
+
+<ul>
+  <li>Supports sessions</li>
+  <li>Create your routes and views in the Sinatra way</li>
+  <li>JQuery, Bootstrap and FontAwesome, all included</li>
+  <li>Rackup allows you deploy your application with <i>puma</i>, <i>unicorn</i>, <i>thin</i> etc</li>
+  <li>Use any gem you want</li>
+  <li>Use any Javascript code and/or CSS you want</li>
+  <li>...</li>
+</ul>
+
+<p>Just use your creativity and go further</p>

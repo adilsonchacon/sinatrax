@@ -66,7 +66,7 @@ elsif options[:migration] == :generate
   
   time_now = Time.now.strftime("%Y%m%d%M%S%L")
   File.open("./migrations/#{time_now}_create_#{model_name}.rb", 'w') do |file|
-    file.write("class create_#{model_name.classify} < ActiveRecord::Migration\n")
+    file.write("class Create#{model_name.classify} < ActiveRecord::Migration\n")
     file.write("  def up\n")
     file.write("    create_table :#{model_name.pluralize} do |t|\n")
 
