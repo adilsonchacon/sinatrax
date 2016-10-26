@@ -26,7 +26,7 @@ You can generate yours models, just like that:
     ruby schema.rb --db generate author name:string age:integer
     ruby schema.rb --db generate post title:string body:text author:belongs_to
 
-Check the migrations and models directories.
+_(Please, check the "migration" and "model" directories.)_
 
 Execute your migrations:
 
