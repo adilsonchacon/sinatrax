@@ -7,9 +7,22 @@ Use Sinatrax to create Sinatra projects with ActiveRecord, Migration, JQuery, Bo
 
 Configure your database adapter just uncommeting the right _gem_ on _Gemfile_: mysql, postgres or sqlite3.
 
+    gem 'mysql2'
+    # gem 'pg'
+    # gem 'sqlite3'
+
 After that, set up database connection with the right adapter and credentials:
 
     cp config/database.yml.example config/database.yml
+
+and edit _config/database.yml_:
+
+    adapter:  "mysql2"
+    host:     "localhost"
+    username: "root"
+    password: "aidentro!"
+    database: "sinatrax"
+    encoding: 'utf8'
 
 Almost there! Just run:
 
@@ -35,13 +48,18 @@ Execute your migrations:
 Or rollback:
 
     ruby schema.rb --db rollback
-    
+
+# IRB
+
+    irb
+    require './environment'
+
 # And More
 
-* Supports sessions
+* Sinatrax supports sessions
 * Create your routes and views in the Sinatra way
 * JQuery, Bootstrap and FontAwesome, all included
-* Rackup allows you deploy your application with _puma_, _unicorn_, _thin_ etc
+* Rackup allows you to deploy your application with _puma_, _unicorn_, _thin_ etc
 * Use any gem you want
 * Use any Javascript code and/or CSS you want
 * ...

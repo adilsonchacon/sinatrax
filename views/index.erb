@@ -9,11 +9,29 @@
 
 <p>Configure your database adapter just uncommeting the right <i>gem</i> on <i>Gemfile</i>: mysql, postgres or sqlite3.</p>
 
+<pre>
+    gem 'mysql2'
+    # gem 'pg'
+    # gem 'sqlite3'
+</pre>
+
 <p>After that, set up database connection with the right adapter and credentials:</p>
 
 <pre>
     cp config/database.yml.example config/database.yml
 </pre>
+
+<p>and edit <i>config/database.yml</i>:</p>
+
+<pre>
+    adapter:  "mysql2"
+    host:     "localhost"
+    username: "root"
+    password: "aidentro!"
+    database: "sinatrax"
+    encoding: 'utf8'
+</pre>
+
 
 <p>Almost there! Just run:</p>
 
@@ -48,11 +66,17 @@
     ruby schema.rb --db rollback
 </pre>
 
+<h2>IRB</h2>
+
+<pre>
+    irb
+    require './environment'
+</pre>
 
 <h2>And More</h2>
 
 <ul>
-  <li>Supports sessions</li>
+  <li>Sinatrax supports sessions</li>
   <li>Create your routes and views in the Sinatra way</li>
   <li>JQuery, Bootstrap and FontAwesome, all included</li>
   <li>Rackup allows you deploy your application with <i>puma</i>, <i>unicorn</i>, <i>thin</i> etc</li>
