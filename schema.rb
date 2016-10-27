@@ -1,6 +1,7 @@
 require './environment'
 require './lib/migration'
 require 'optparse'
+require 'fileutils'
 
 def get_instance(file)
   require file
@@ -24,6 +25,12 @@ OptionParser.new do |opts|
     exit
   end
 end.parse!
+
+begin
+  FileUtils.mkdir_p('./migrations/')
+rescue Exception => e
+  p e
+end
 
 if options[:migration].nil? 
   p "Invalid action! Use 'migrate' to execute undone migration or 'rollback' to undo very last migration"
