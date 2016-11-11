@@ -71,7 +71,7 @@ elsif options[:migration] == :generate
   new_model_options = ARGV
   model_name = new_model_options.shift
   
-  time_now = Time.now.strftime("%Y%m%d%M%S%L")
+  time_now = Time.now.strftime("%Y%m%d%H%M%S%L")
   File.open("./migrations/#{time_now}_create_#{model_name}.rb", 'w') do |file|
     file.write("class Create#{model_name.classify} < ActiveRecord::Migration\n")
     file.write("  def up\n")
