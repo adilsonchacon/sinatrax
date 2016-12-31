@@ -79,7 +79,7 @@ elsif options[:migration] == :generate
 
     new_model_options.each do |column|
       name, type = column.split(/\:/)
-      file.write("      t.#{type} :#{name}\n")
+      file.write("      t.#{type} :#{name}#{(type == 'belongs_to') ? ', index: true' : ''}\n")
     end
     file.write("\n      t.timestamps null: false\n")
 
