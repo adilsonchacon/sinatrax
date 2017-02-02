@@ -1,5 +1,5 @@
 # What's Sinatrax for?
-Use Sinatrax to create Sinatra projects with ActiveRecord, Migration, JQuery, Bootstrap and FontAwesome in a fast way
+Use Sinatrax to create Sinatra projects with ActiveRecord, Migration, JQuery, Bootstrap and FontAwesome in a fast way. Also, Sinatrax is great to build microservices.
 
 # How to use it?
     git clone https://github.com/adilsonchacon/sinatrax.git
